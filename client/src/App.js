@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Customers from './components/customers';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Home from "./components/home/index";
+import Customers from "./components/customers";
 
 class App extends Component {
   render() {
@@ -11,7 +12,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">React Express Starter</h1>
         </header>
-        <Customers />
+        <Home />
       </div>
     );
   }
