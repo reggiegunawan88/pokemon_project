@@ -1,0 +1,21 @@
+nav {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  min-height: 15vh;
+  background: rgb(240, 67, 67);
+}
+
+.nav-links {
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
+.img-logo {
+  width: auto;
+  height: 70px;
+  margin: 5px;
+}
