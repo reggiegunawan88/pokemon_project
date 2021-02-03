@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
 import PokemonCard from "./pokemon-card/card";
 import { useQuery } from "@apollo/react-hooks";
-import gql from "graphql-tag";
-import { Query } from "react-apollo";
 import { GET_POKEMONS } from "./../utils/get-pokemons";
+import Grid from "@material-ui/core/Grid";
+import "./index.css";
 
 const index = () => {
   const { data } = useQuery(GET_POKEMONS, {
-    variables: { first: 500 },
+    variables: { first: 200 },
   });
-  console.log(data);
 
   if (data == undefined) {
     return <h3>Loading...</h3>;
@@ -21,15 +20,14 @@ const index = () => {
           <h2>POKEDEX</h2>
           <h3>Owned Pokemon: 0</h3>
         </div>
-        <div className="group-cards">
-          <div className="row">
+        <div style={{ margin: 50 }}>
+          <Grid container spacing={3}>
             {data.pokemons.map((pokemon) => (
-              <div className="col-4" key={pokemon.number}>
+              <Grid item xs={4} key={pokemon.number}>
                 <PokemonCard pokemon={pokemon} />
-                {/* <p>{pokemon.number}</p> */}
-              </div>
+              </Grid>
             ))}
-          </div>
+          </Grid>
         </div>
       </div>
     </div>

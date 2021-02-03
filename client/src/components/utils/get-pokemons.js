@@ -8,6 +8,15 @@ export const GET_POKEMONS = gql`
       name
       types
       image
+      height {
+        minimum
+        maximum
+      }
+      weight {
+        minimum
+        maximum
+      }
+      classification
       maxHP
       maxCP
       attacks {

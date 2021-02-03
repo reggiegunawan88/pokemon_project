@@ -7,11 +7,12 @@ nav {
 }
 
 .nav-links {
-  width: 30%;
+  width: 50%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   list-style: none;
+  margin: 15px;
 }
 
 .img-logo {

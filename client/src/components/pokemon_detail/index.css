@@ -1,0 +1,30 @@
+.pokemon-img {
+  width: auto;
+  height: 200px;
+}
+
+.pokemon-types p {
+  margin: 15px;
+  font-size: 20px;
+  /* background-color: red; */
+}
+
+.btn-catch {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.btn-section {
+  position: relative;
+  top: 20px;
+}
+
+.pokeball-btn {
+  margin: 20px;
+  outline: none;
+}
+
+.pokeball-logo {
+  width: 50px;
+  height: auto;
+}

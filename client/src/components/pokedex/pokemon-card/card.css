@@ -1,3 +1,12 @@
 .img-card {
   height: 150px !important;
 }
+
+.types-section a {
+  margin: 10px;
+  background-color: burlywood;
+  padding: 5px;
+  border-radius: 5px;
+  color: white !important;
+  font-weight: bold;
+}

@@ -22,8 +22,8 @@ class App extends Component {
             <Nav />
             <Switch>
               <Route path="/" exact component={Home} />
-              <Route path="/pokedex" component={Pokedex} />
-              <Route path="/pokedex:id" component={PokemonDetail} />
+              <Route path="/pokedex" exact component={Pokedex} />
+              <Route path="/pokedex/:name" component={PokemonDetail} />
               <Route path="/mypokemon" component={MyPokemon} />
             </Switch>
           </div>

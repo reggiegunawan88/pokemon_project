@@ -11,17 +11,18 @@ const nav = () => {
     <nav>
       <Link to="/">
         <img
+          alt="Pokemon Logo"
           className="img-logo"
           src={require("./../../../asset/pokemon-logo-simple.png")}
         />
       </Link>
       <ul className="nav-links">
-        <Link style={navStyle} to="pokedex">
+        <Link style={navStyle} to="/pokedex">
           <li>
             <b>POKEDEX</b>
           </li>
         </Link>
-        <Link style={navStyle} to="mypokemon">
+        <Link style={navStyle} to="/mypokemon">
           <li>
             <b>MY POKEMON</b>
           </li>
