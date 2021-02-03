@@ -2,7 +2,7 @@ nav {
   display: flex;
   justify-content: left;
   align-items: center;
-  min-height: 15vh;
+  min-height: 10vh;
   background: rgb(240, 67, 67);
 }
 

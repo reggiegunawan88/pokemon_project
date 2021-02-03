@@ -1,27 +1,34 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import Nav from "./components/nav/nav";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import ApolloClient from "apollo-boost";
+import { ApolloProvider } from "@apollo/react-hooks";
+import Nav from "./components/utils/nav/nav";
 import Home from "./components/home/index";
 import PokemonDetail from "./components/pokemon_detail/index";
-import Pokedex from "./components/pokemon_list/index";
+import Pokedex from "./components/pokedex/index";
 import MyPokemon from "./components/my_pokemon/index";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+const client = new ApolloClient({
+  uri: "https://graphql-pokemon2.vercel.app/",
+});
 
 class App extends Component {
   render() {
     return (
-      <Router>
-        <div className="App">
-          <Nav />
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/pokedex" component={Pokedex} />
-            <Route path="/pokedex:id" component={PokemonDetail} />
-            <Route path="/mypokemon" component={MyPokemon} />
-          </Switch>
-        </div>
-      </Router>
+      <ApolloProvider client={client}>
+        <Router>
+          <div className="App">
+            <Nav />
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route path="/pokedex" component={Pokedex} />
+              <Route path="/pokedex:id" component={PokemonDetail} />
+              <Route path="/mypokemon" component={MyPokemon} />
+            </Switch>
+          </div>
+        </Router>
+      </ApolloProvider>
     );
   }
 }

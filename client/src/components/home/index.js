@@ -14,6 +14,7 @@ const index = () => {
         <div>
           <p>To view pokemon list, go to POKEDEX menu</p>
           <p>To view your pokemon, go to MY POKEMON menu</p>
+          <p>PokeAPI Project by Reggie Gunawan</p>
         </div>
       </div>
     </div>

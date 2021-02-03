@@ -12,7 +12,7 @@ const nav = () => {
       <Link to="/">
         <img
           className="img-logo"
-          src={require("./../../asset/pokemon-logo-simple.png")}
+          src={require("./../../../asset/pokemon-logo-simple.png")}
         />
       </Link>
       <ul className="nav-links">
