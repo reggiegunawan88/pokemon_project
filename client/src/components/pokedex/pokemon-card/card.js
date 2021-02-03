@@ -16,16 +16,10 @@ const index = ({ pokemon }) => {
     <Link
       to={{ pathname: `/pokedex/${pokemon.name}`, state: { pokemon: pokemon } }}
     >
-      <Card>
-        {/* <Image style={{ height: "auto" }} src={pokemon.image} ui={false} /> */}
-        {/* <div style={{ width: "50%" }}>
-        <CardMedia
-          image={pokemon.image}
-          title="Contemplative Reptile"
-          style={styles.media}
-        />
-      </div> */}
+      <Card className="card-body">
+        <Image className="img-card" src={pokemon.image} />
         <Card.Content>
+          {/* <img src={pokemon.image} alt={pokemon.name} /> */}
           <Card.Header>{pokemon.name}</Card.Header>
           <Card.Meta>
             <span>

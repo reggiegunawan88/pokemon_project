@@ -1,5 +1,13 @@
+.card-body {
+  height: 370px;
+  width: 260px;
+}
+
 .img-card {
-  height: 150px !important;
+  height: auto;
+  width: auto;
+  max-width: 260px;
+  max-height: 250px;
 }
 
 .types-section a {
