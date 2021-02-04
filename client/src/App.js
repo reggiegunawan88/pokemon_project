@@ -3,6 +3,8 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "@apollo/react-hooks";
+
+//pages component
 import Nav from "./components/utils/nav/nav";
 import Home from "./components/home/index";
 import PokemonDetail from "./components/pokemon_detail/index";

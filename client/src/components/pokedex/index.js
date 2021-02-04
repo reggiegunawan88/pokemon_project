@@ -10,6 +10,12 @@ const index = () => {
     variables: { first: 200 },
   });
 
+  const [ownedPokemons, setOwnedPokemons] = useState(0);
+
+  useEffect(() => {
+    setOwnedPokemons(JSON.parse(localStorage.getItem("myPokemon")).length);
+  }, []);
+
   if (data == undefined) {
     return <h3>Loading...</h3>;
   }
@@ -18,7 +24,7 @@ const index = () => {
       <div className="container">
         <div className="title-section">
           <h2>POKEDEX</h2>
-          <h3>Owned Pokemon: 0</h3>
+          <h3>Owned Pokemon: {ownedPokemons}</h3>
         </div>
         <div style={{ margin: 50 }}>
           <Grid container spacing={4}>

@@ -2,11 +2,18 @@ import React, { useState } from "react";
 import { Modal, Button, Row, Col, Container, Image } from "react-bootstrap";
 
 const modal = ({ show, data, closeModal }) => {
-  const [pokemon, setPokemon] = useState(data.pokemon);
   const [nickname, setNickname] = useState("");
 
-  const submit_pokemon = () => {
-    console.log(nickname);
+  const catch_pokemon = () => {
+    var pokemon = { ...data.pokemon, nickname: nickname };
+
+    //get and store to localstorage
+    let currentCatchedPokemon = JSON.parse(
+      localStorage.getItem("myPokemon") || "[]"
+    );
+    currentCatchedPokemon.push(pokemon);
+    localStorage.setItem("myPokemon", JSON.stringify(currentCatchedPokemon));
+    closeModal();
   };
 
   return (
@@ -35,7 +42,7 @@ const modal = ({ show, data, closeModal }) => {
                 <input
                   style={{ borderRadius: 5 }}
                   type="text"
-                  onChange={(e) => setNickname({ nickname: e.target.value })}
+                  onChange={(e) => setNickname(e.target.value)}
                 />
               </Container>
             </Row>
@@ -43,10 +50,10 @@ const modal = ({ show, data, closeModal }) => {
         </Modal.Body>
         <Modal.Footer style={{ justifyContent: "center" }}>
           <Button variant="danger" onClick={closeModal}>
-            Release
+            RELEASE
           </Button>
-          <Button variant="primary" onClick={submit_pokemon}>
-            OK
+          <Button variant="primary" onClick={catch_pokemon}>
+            CATCH
           </Button>
         </Modal.Footer>
       </Modal>
