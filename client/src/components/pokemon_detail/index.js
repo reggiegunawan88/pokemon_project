@@ -7,7 +7,7 @@ import ModalPopup from "./modal/modal";
 import "./index.css";
 
 const index = (props) => {
-  const data = props.location.state;
+  const data = props.location.state; //pokemon data
 
   const [snackbar, setSnackbar] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -35,13 +35,28 @@ const index = (props) => {
       <section>
         <Grid container spacing={3} style={{ marginTop: 25 }}>
           <Grid item xs={4}>
-            <h3>Pokemon Type</h3>
-            <div className="pokemon-types">
-              {data.pokemon.types.map((type) => (
-                <p className="pokemon-type" key={type}>
-                  {type}
-                </p>
-              ))}
+            <div className="container">
+              <div>
+                <h3>Pokemon Type</h3>
+                <div className="pokemon-types">
+                  {data.pokemon.types.map((type) => (
+                    <p className="pokemon-type" key={type}>
+                      {type}
+                    </p>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h3>Pokemon Status</h3>
+                <div className="pokemon-status">
+                  <p className="pokemon-type" key={data.pokemon.maxHP}>
+                    Max HP: {data.pokemon.maxHP}
+                  </p>
+                  <p className="pokemon-type" key={data.pokemon.maxCP}>
+                    Max CP: {data.pokemon.maxCP}
+                  </p>
+                </div>
+              </div>
             </div>
           </Grid>
           <Grid item xs={4}>
@@ -88,14 +103,6 @@ const index = (props) => {
                       <br />
                     </td>
                   </tr>
-                  <tr>
-                    <th>Max HP</th>
-                    <td>{data.pokemon.maxHP}</td>
-                  </tr>
-                  <tr>
-                    <th>Max CP</th>
-                    <td>{data.pokemon.maxCP}</td>
-                  </tr>
                 </tbody>
               </Table>
             </div>
@@ -104,7 +111,7 @@ const index = (props) => {
       </section>
       <Snackbar open={snackbar} autoHideDuration={300}>
         <Alert elevation={6} variant="filled" severity="warning">
-          Pokemon not yet obtained
+          Pokemon flee! Try to catch again.
         </Alert>
       </Snackbar>
       <ModalPopup show={showModal} data={data} closeModal={close_modal} />

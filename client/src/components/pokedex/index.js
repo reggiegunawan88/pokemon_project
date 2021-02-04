@@ -21,7 +21,7 @@ const index = () => {
           <h3>Owned Pokemon: 0</h3>
         </div>
         <div style={{ margin: 50 }}>
-          <Grid container spacing={3}>
+          <Grid container spacing={4}>
             {data.pokemons.map((pokemon) => (
               <Grid item xs={4} key={pokemon.number}>
                 <PokemonCard pokemon={pokemon} />
