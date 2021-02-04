@@ -1,0 +1,20 @@
+.card-body {
+  height: 370px;
+  width: 260px;
+}
+
+.img-card {
+  height: auto;
+  width: auto;
+  max-width: 260px;
+  max-height: 250px;
+}
+
+.types-section a {
+  margin: 10px;
+  background-color: burlywood;
+  padding: 5px;
+  border-radius: 5px;
+  color: white !important;
+  font-weight: bold;
+}

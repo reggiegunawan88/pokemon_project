@@ -19,28 +19,31 @@ const index = () => {
   const renderCard = () => {
     return (
       <Grid container spacing={4}>
-        {/* {data.pokemons.map((pokemon) => (
+        {pokemons.map((pokemon) => (
           <Grid item xs={4} key={pokemon.number}>
             <MyPokemonCard pokemon={pokemon} />
           </Grid>
-        ))} */}
+        ))}
       </Grid>
     );
   };
 
   return (
     <div>
-      <div className="title-section">
-        <h2>MY POKEMON</h2>
-      </div>
-      <div style={{ margin: 50 }}>
-        {pokemons.length > 0 ? (
-          <h3>You have pokemons!</h3>
-        ) : (
-          <h3>
-            You have no pokemon right now. <br /> Try to catch some on Pokedex!
-          </h3>
-        )}
+      <div className="container">
+        <div className="title-section">
+          <h2>MY POKEMONS</h2>
+        </div>
+        <div style={{ margin: 50 }}>
+          {pokemons.length > 0 ? (
+            renderCard()
+          ) : (
+            <h3>
+              You have no pokemon right now. <br /> Try to catch some on
+              Pokedex!
+            </h3>
+          )}
+        </div>
       </div>
     </div>
   );
