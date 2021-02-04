@@ -60,10 +60,15 @@ const index = (props) => {
             </div>
           </Grid>
           <Grid item xs={4}>
-            <img className="pokemon-img" src={data.pokemon.image} />
+            <img
+              alt="PokemonPict"
+              className="pokemon-img"
+              src={data.pokemon.image}
+            />
             <div className="btn-section">
               <button className="pokeball-btn" onClick={handle_catch}>
                 <img
+                  alt="PokeballLogo"
                   className="pokeball-logo"
                   src={require("./../../asset/pokeball.png")}
                 />

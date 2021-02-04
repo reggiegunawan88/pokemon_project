@@ -7,6 +7,7 @@ const index = () => {
       <div className="container">
         <div className="img-section">
           <img
+            alt="PokemonLogo"
             className="pokemon-logo"
             src={require("./../../asset/pokemon-logo.png")}
           />

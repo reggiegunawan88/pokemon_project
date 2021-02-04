@@ -13,10 +13,12 @@ const index = () => {
   const [ownedPokemons, setOwnedPokemons] = useState(0);
 
   useEffect(() => {
-    setOwnedPokemons(JSON.parse(localStorage.getItem("myPokemon")).length);
+    if (localStorage.getItem("myPokemon")) {
+      setOwnedPokemons(JSON.parse(localStorage.getItem("myPokemon")).length);
+    }
   }, []);
 
-  if (data == undefined) {
+  if (data === undefined) {
     return <h3>Loading...</h3>;
   }
   return (
