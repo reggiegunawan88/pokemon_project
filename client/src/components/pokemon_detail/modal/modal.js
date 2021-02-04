@@ -8,12 +8,23 @@ const modal = ({ show, data, closeModal }) => {
     var pokemon = { ...data.pokemon, nickname: nickname };
 
     //get and store to localstorage
-    let currentCatchedPokemon = JSON.parse(
+    let currentCatchedPokemons = JSON.parse(
       localStorage.getItem("myPokemon") || "[]"
     );
-    currentCatchedPokemon.push(pokemon);
-    localStorage.setItem("myPokemon", JSON.stringify(currentCatchedPokemon));
-    closeModal();
+
+    //pokemon nickname validation
+    const foundSimilar = currentCatchedPokemons.some(
+      (pokemon) => pokemon.nickname === nickname
+    );
+
+    if (foundSimilar) {
+      alert("You have owned a pokemon with current nickname");
+    } else {
+      alert("Pokemon catched! Go to My Pokemon menu to see your pokemons");
+      currentCatchedPokemons.push(pokemon);
+      localStorage.setItem("myPokemon", JSON.stringify(currentCatchedPokemons));
+      closeModal();
+    }
   };
 
   return (
