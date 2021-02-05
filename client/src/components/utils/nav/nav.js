@@ -3,10 +3,6 @@ import "./nav.css";
 import { Link } from "react-router-dom";
 
 const nav = () => {
-  const navStyle = {
-    color: "white",
-  };
-
   return (
     <nav>
       <Link to="/">
@@ -17,12 +13,12 @@ const nav = () => {
         />
       </Link>
       <ul className="nav-links">
-        <Link style={navStyle} to="/pokedex">
+        <Link className="nav-style" to="/pokedex">
           <li>
             <b>POKEDEX</b>
           </li>
         </Link>
-        <Link style={navStyle} to="/mypokemon">
+        <Link className="nav-style" to="/mypokemon">
           <li>
             <b>MY POKEMON</b>
           </li>
