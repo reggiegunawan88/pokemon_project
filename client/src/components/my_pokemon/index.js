@@ -20,7 +20,7 @@ const index = () => {
     return (
       <Grid container spacing={4}>
         {pokemons.map((pokemon) => (
-          <Grid item xs={4} key={pokemon.number}>
+          <Grid className="fade-in" item xs={4} key={pokemon.number}>
             <MyPokemonCard pokemon={pokemon} />
           </Grid>
         ))}

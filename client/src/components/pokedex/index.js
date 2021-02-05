@@ -45,12 +45,12 @@ const index = () => {
           {limitPage < data.pokemons.length && (
             <div container>
               <Button
-                style={{ margin: 20, borderRadius: 5 }}
+                className="btn-load"
                 variant="contained"
                 color="primary"
                 onClick={loadMore}
               >
-                Load More...
+                Load More
               </Button>
             </div>
           )}
