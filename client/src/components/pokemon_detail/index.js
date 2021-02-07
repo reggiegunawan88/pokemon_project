@@ -7,15 +7,25 @@ import ModalPopup from "./modal/modal";
 import "./index.css";
 
 const index = (props) => {
+  /* pokemon data */
   const data = props.location.state; //pokemon data
 
+  /* state toggle modal and alert */
   const [snackbar, setSnackbar] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
+  /**
+   * function: close_modal
+   * description: toggle button to close modal
+   */
   const close_modal = () => {
     setShowModal(false);
   };
 
+  /**
+   * function: handle_catch
+   * description: catch certain pokemon by 50% chance
+   */
   const handle_catch = () => {
     var random = Math.random();
     if (random > 0.5) {

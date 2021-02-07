@@ -20,7 +20,7 @@ const nav = () => {
         </Link>
         <Link className="nav-style" to="/mypokemon">
           <li>
-            <b>MY POKEMON</b>
+            <b>MY POKEMONS</b>
           </li>
         </Link>
       </ul>

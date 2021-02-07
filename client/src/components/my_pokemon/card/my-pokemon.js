@@ -4,7 +4,14 @@ import { Button } from "react-bootstrap";
 import "./my-pokemon.css";
 import Dialog from "./dialog/dialog";
 
+/**
+ *
+ * @param {
+ *  pokemon: pokemon data
+ * }
+ */
 const MyPokemonCard = ({ pokemon }) => {
+  /* state value to toggle dialog */
   const [showDialog, setShowDialog] = useState(false);
 
   return (

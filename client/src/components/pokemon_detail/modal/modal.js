@@ -1,20 +1,32 @@
 import React, { useState } from "react";
 import { Modal, Button, Row, Col, Container, Image } from "react-bootstrap";
 
+/**
+ *
+ * @param {
+ * show: toggle open modal
+ * data: pokemon data
+ * closeModal: callback to close modal
+ * }
+ */
 const modal = ({ show, data, closeModal }) => {
   const [nickname, setNickname] = useState("");
 
+  /**
+   * function: catch_pokemon
+   * description: catch and give nickname to pokemon
+   */
   const catch_pokemon = () => {
     var pokemon = { ...data.pokemon, nickname: nickname };
 
-    //get and store to localstorage
+    //get data from localstorage
     let currentCatchedPokemons = JSON.parse(
       localStorage.getItem("myPokemon") || "[]"
     );
 
-    //pokemon nickname validation
+    //similar pokemon nickname validation
     const foundSimilar = currentCatchedPokemons.some(
-      (pokemon) => pokemon.nickname === nickname
+      (pokemon) => pokemon.nickname.toUpperCase() === nickname.toUpperCase()
     );
 
     if (foundSimilar) {
@@ -22,7 +34,7 @@ const modal = ({ show, data, closeModal }) => {
     } else {
       alert("Pokemon catched! Go to My Pokemon menu to see your pokemons");
       currentCatchedPokemons.push(pokemon);
-      localStorage.setItem("myPokemon", JSON.stringify(currentCatchedPokemons));
+      localStorage.setItem("myPokemon", JSON.stringify(currentCatchedPokemons)); //save to local storage
       closeModal();
     }
   };

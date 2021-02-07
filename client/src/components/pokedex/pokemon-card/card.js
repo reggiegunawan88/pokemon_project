@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Card, Image } from "semantic-ui-react";
 import "./card.css";
 
+/* @param: pokemon data */
 const index = ({ pokemon }) => {
   return (
     <Link

@@ -11,6 +11,7 @@ import PokemonDetail from "./components/pokemon_detail/index";
 import Pokedex from "./components/pokedex/index";
 import MyPokemon from "./components/my_pokemon/index";
 
+/* client request URL */
 const client = new ApolloClient({
   uri: "https://graphql-pokemon2.vercel.app/",
 });

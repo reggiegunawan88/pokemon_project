@@ -1,7 +1,19 @@
 import React from "react";
 import { Container, Modal, Button } from "react-bootstrap";
 
+/**
+ *
+ * @param {
+ *show: boolean value to open modal
+ *onHide: callback to close modal
+ *pokemon: pokemon data
+ * }
+ */
 const dialog = ({ show, onHide, pokemon }) => {
+  /**
+   * function: releasePokemon
+   * description: function callback to delete pokemon from local storage
+   */
   const releasePokemon = () => {
     let currentCatchedPokemons = JSON.parse(localStorage.getItem("myPokemon"));
     let newPokemonsDataset = currentCatchedPokemons.filter(

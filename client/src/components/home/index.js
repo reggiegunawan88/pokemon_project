@@ -5,7 +5,7 @@ import "./index.css";
 const index = () => {
   return (
     <div>
-      <div style={{ flexGrow: 1 }}>
+      <div>
         <Grid container spacing={3}>
           <Grid item xs={12}>
             <div className="img-section">
@@ -18,9 +18,9 @@ const index = () => {
           </Grid>
           <Grid item xs={12}>
             <div style={{ fontSize: 18, fontWeight: "bold" }}>
-              <p>To view pokemon list, go to POKEDEX menu</p>
+              <p>To view pokemons list, go to POKEDEX menu</p>
               <p>To view your pokemon, go to MY POKEMON menu</p>
-              <p>PokeAPI Project by Reggie Gunawan</p>
+              <p>PokeAPI Mini Project by Reggie Gunawan</p>
             </div>
           </Grid>
         </Grid>

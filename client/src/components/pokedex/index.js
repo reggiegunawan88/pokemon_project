@@ -7,19 +7,27 @@ import Button from "@material-ui/core/Button";
 import "./index.css";
 
 const index = () => {
+  const [ownedPokemons, setOwnedPokemons] = useState(0);
+  const [limitPage, setLimitPage] = useState(6);
+
+  /**
+   * query pokemons list data -> GraphQL request
+   */
   const { data } = useQuery(GET_POKEMONS, {
     variables: { first: 500 },
   });
 
-  const [ownedPokemons, setOwnedPokemons] = useState(0);
-  const [limitPage, setLimitPage] = useState(6);
-
   useEffect(() => {
     if (localStorage.getItem("myPokemon")) {
+      /* set owned pokemon value */
       setOwnedPokemons(JSON.parse(localStorage.getItem("myPokemon")).length);
     }
   }, []);
 
+  /**
+   * function: loadMore
+   * description: show more pokemons list on click button
+   */
   const loadMore = () => {
     setLimitPage(limitPage + 6);
   };

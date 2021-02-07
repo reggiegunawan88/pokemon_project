@@ -6,6 +6,7 @@ import MyPokemonCard from "./card/my-pokemon";
 const index = () => {
   const [pokemons, setPokemons] = useState([]);
 
+  /* get user's pokemons data from browser local storage */
   const getStoredData = () => {
     if (localStorage.getItem("myPokemon")) {
       setPokemons(JSON.parse(localStorage.getItem("myPokemon")));
@@ -35,6 +36,7 @@ const index = () => {
           <h2>MY POKEMONS</h2>
         </div>
         <div style={{ margin: 50 }}>
+          {/* conditional rendering */}
           {pokemons.length > 0 ? (
             renderCard()
           ) : (
